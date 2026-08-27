@@ -42,7 +42,36 @@ with st.form("pedido_form"):
     direccion_final = st.text_input("Dirección completa final*", value=st.session_state.dir_elegida)
     col1, col2 = st.columns(2)
     with col1:
-        zona = st.selectbox("Zona", ["Ciudad Evita", "González Catán", "Laferrere", "Rafael Castillo", "CABA - Norte", "CABA - Sur", "Otra"])
+        zona = st.selectbox("Zona de Reparto", [
+            "--- CABA ---",
+            "CABA - Microcentro / San Telmo",
+            "CABA - Norte (Palermo, Belgrano, Nuñez)",
+            "CABA - Sur (Barracas, La Boca, Parque Patricios)",
+            "CABA - Oeste (Caballito, Flores, Floresta)",
+            "--- ZONA SUR ---",
+            "Avellaneda / Wilde / Sarandí",
+            "Lanús / Gerli / Remedios de Escalada",
+            "Lomas de Zamora / Banfield / Temperley",
+            "Adrogué / Burzaco / Longchamps",
+            "Quilmes / Bernal / Ezpeleta",
+            "Berazategui / Florencio Varela",
+            "Monte Grande / Ezeiza / Canning",
+            "--- ZONA OESTE (TU ZONA FUERTE) ---",
+            "Ciudad Evita / San Justo / Ramos Mejía",
+            "González Catán / Laferrere / Rafael Castillo",
+            "Isidro Casanova / Gregorio de Laferrere",
+            "Morón / Haedo / Castelar",
+            "Hurlingham / Ituzaingó / Merlo",
+            "Moreno / La Reja / Francisco Álvarez",
+            "--- ZONA NORTE ---",
+            "Vicente López / Olivos / Florida",
+            "San Isidro / Martínez / Acassuso",
+            "San Fernando / Victoria / Tigre",
+            "Pilar / Del Viso / Tortuguitas",
+            "Escobar / Garín / Maschwitz",
+            "--- OTRA ---",
+            "Otra Zona"
+        ])
         monto = st.number_input("Monto ($)", min_value=0, step=500)
     with col2:
         repartidor = st.selectbox("Repartidor", ["Repartidor 1", "Repartidor 2", "Repartidor 3"])
